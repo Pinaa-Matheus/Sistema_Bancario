@@ -10,7 +10,7 @@ Projeto simples de terminal feito em Python que simula um sistema bancário com 
 
 ## 🛠 Tecnologias
 
-- Python 3.x
+- Python 3.13
 
 ## ▶️ Como usar
 
