@@ -44,10 +44,13 @@ while True:
                 print(f"Saque de R$ {saque} realizado!")
 
     elif opcao == "3":
-            print(extrato)
+            print("\n ============= EXTRATO =============")
+            print("Não foram realizados movimentações." if not extrato else extrato)
+            print(f"\n Saldo R$ {saldo}")
+            print("\n ===================================")
 
     elif opcao == "4":
             print("Saindo...")
             break
     else:
-        print("Operação Inválida")
+        print("Operação Inválida!")
