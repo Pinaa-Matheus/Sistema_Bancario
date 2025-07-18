@@ -54,3 +54,10 @@ while True:
             break
     else:
         print("Operação Inválida!")
+
+
+
+
+#Cadastrar novo usuario 
+#Cadastrar nova conta no banco 
+#Criar funções para todo o sistema bancario 
