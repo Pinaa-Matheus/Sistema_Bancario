@@ -76,6 +76,13 @@ def sacar(saldo, extrato, numero_saques, valor, limite, limite_saques):
         print(f"Saque de R$ {valor:.2f} realizado!")
     return saldo, extrato, numero_saques
 
+def exibir_extrato(saldo, extrato):
+    print("\n===== EXTRATO =====")
+    print("Sem movimentações." if not extrato else extrato)
+    print(f"Saldo: R$ {saldo:.2f}")
+    print("===================")
+
+
 ##      MENU      ##
 while True:
     opcao = menu()
@@ -89,7 +96,7 @@ while True:
         sacar(valor)
 
     elif opcao == "3":
-        exibir_extrato()
+        exibir_extrato(saldo, extrato)
 
     elif opcao == "4":
         cadastrar_usuario(usuarios)
