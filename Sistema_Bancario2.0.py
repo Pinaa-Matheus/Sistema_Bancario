@@ -50,7 +50,31 @@ def cadastrar_usuario(usuarios):
         "endereco": endereco
     })
     print("Usuário criado com sucesso!")
-    return usuario
+    
+
+def depositar(saldo, extrato, valor):
+    if valor > 0:
+        saldo += valor 
+        extrato += f"\nDepósito: R$ {valor:.2f}"
+    else:
+        print("Valor inválido para depósito.")
+    return saldo, extrato
+
+def sacar(saldo, extrato, numero_saques, valor, limite, limite_saques):
+    if valor <= 0:
+        print("Valor Inválido para saque.")
+    elif numero_saques >= limite_saques:
+        print("Limite diário de saques atingido.")
+    elif valor > limite:
+        print(f"Saque acima do limite de R$ {limite:.2f}.")
+    elif valor > saldo:
+        print("Saldo insuficiente.")
+    else:
+        saldo -= valor
+        numero_saques += 1 
+        extrato += f"\nSaque : R$ {valor:.2f}"
+        print(f"Saque de R$ {valor:.2f} realizado!")
+    return saldo, extrato, numero_saques
 
 ##      MENU      ##
 while True:
@@ -58,7 +82,7 @@ while True:
 
     if opcao == "1":
         valor = float(input("Valor do depósito R$: "))
-        depositar(valor)
+        depositar(saldo, extrato, valor)
 
     elif opcao == "2":
         valor = float(input("Valor do saque R$: "))
@@ -68,7 +92,7 @@ while True:
         exibir_extrato()
 
     elif opcao == "4":
-        criar_usuario()
+        cadastrar_usuario(usuarios)
 
     elif opcao == "5":
         criar_conta()
